@@ -1,0 +1,21 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html>
+<body>
+<h1>调试信息</h1>
+<p>站点标题: {{ site.title }}</p>
+<p>文章总数: {{ site.posts.size }}</p>
+<p>文章列表:</p>
+<ul>
+{% for post in site.posts %}
+  <li>{{ post.title }} - {{ post.date }}</li>
+{% else %}
+  <li>没有找到文章！</li>
+{% endfor %}
+</ul>
+<p>配置文件内容:</p>
+<pre>{{ site | inspect }}</pre>
+</body>
+</html>
